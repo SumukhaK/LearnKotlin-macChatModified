@@ -5,7 +5,7 @@ import config from './config';
 export default callback => {
   let db;
   // Connect to the database before starting the application server.
-  mongoose.connect(config.mongoUrl, { useNewUrlParser: true },{ useMongoClient: true },function (err, database) {
+  mongoose.connect(config.mongoUrl, { useNewUrlParser: true },{ useMongoClient: true },{ useUnifiedTopology: true },function (err, database) {
     if (err) {
       console.log(err);
       process.exit(1);
